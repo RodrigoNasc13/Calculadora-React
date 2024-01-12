@@ -27,15 +27,47 @@ function App() {
 
   const btn = (label,onClick) => {
 
-    return(
+    if (label === '=') {
 
-      <button className='btn' onClick={onClick}>
+      return(
 
-        {label}
+        <button className='btnEqual' onClick={onClick}>
+  
+          {label}
+  
+        </button>
+  
+      )  
 
-      </button>
+    }
 
-    )
+    if ((label === 'AC' || label === '(' || label === ')' || label === '/' || label === '*' || label === '-' || label === '+')) {
+
+      return(
+
+        <button className='btnOper' onClick={onClick}>
+  
+          {label}
+
+        </button>
+
+      )
+
+    }
+
+    else {
+
+      return(
+
+        <button className='btn' onClick={onClick}>
+  
+          {label}
+  
+        </button>
+  
+      )
+
+    }
 
   }
 
@@ -110,31 +142,37 @@ function App() {
 
       <h3>Calculadora Matemática</h3>
 
-      {tela(valorTela,resultado)}
+      <div className='calculadora'>
 
-      <div>
+        {tela(valorTela,resultado)}
 
-        {btn('AC',limparMemoria)}
-        {btn('(',()=>addCalc('('))}
-        {btn(')',()=>addCalc(')'))}
-        {btn('/',()=>addCalc('/'))}
-        {btn('7',()=>addCalc('7'))}
-        {btn('8',()=>addCalc('8'))}
-        {btn('9',()=>addCalc('9'))}
-        {btn('*',()=>addCalc('*'))}
-        {btn('4',()=>addCalc('4'))}
-        {btn('5',()=>addCalc('5'))}
-        {btn('6',()=>addCalc('6'))}
-        {btn('-',()=>addCalc('-'))}
-        {btn('1',()=>addCalc('1'))}
-        {btn('2',()=>addCalc('2'))}
-        {btn('3',()=>addCalc('3'))}
-        {btn('0',()=>addCalc('0'))}
-        {btn('.',()=>addCalc('.'))}
-        {btn('<-',()=>operacoes('bs'))}
-        {btn('=',()=>operacoes('='))}
+        <div className='btnArea'>
+
+          {btn('AC',limparMemoria)}
+          {btn('(',()=>addCalc('('))}
+          {btn(')',()=>addCalc(')'))}
+          {btn('/',()=>addCalc('/'))}
+          {btn('7',()=>addCalc('7'))}
+          {btn('8',()=>addCalc('8'))}
+          {btn('9',()=>addCalc('9'))}
+          {btn('*',()=>addCalc('*'))}
+          {btn('4',()=>addCalc('4'))}
+          {btn('5',()=>addCalc('5'))}
+          {btn('6',()=>addCalc('6'))}
+          {btn('-',()=>addCalc('-'))}
+          {btn('1',()=>addCalc('1'))}
+          {btn('2',()=>addCalc('2'))}
+          {btn('3',()=>addCalc('3'))}
+          {btn('+',()=>addCalc('+'))}
+          {btn('<-',()=>operacoes('bs'))}
+          {btn('.',()=>addCalc('.'))}
+          {btn('0',()=>addCalc('0'))}
+          {btn('=',()=>operacoes('='))}
+
+        </div>
 
       </div>
+
 
     </div>
 

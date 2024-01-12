@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
-}
+.container {
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+.calculadora {
+
+  height: 500px;
+  width: 350px;
+  background-color: #212529;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.screen {
+
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 20px 10px;
+  align-items: flex-end;
+  height: 25%;
+  font-size: 34px;
+  font-weight: bold;
+
+}
+
+.btnArea {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.btn {
+
+  width: 22%;
+  height: 55px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 22px;
+
+}
+
+.btn:hover {
+
+  background-color: #343a40;
+
+}
+
+.btnEqual {
+
+  width: 22%;
+  height: 55px;
+  margin-bottom: 5px;
+  background-color: #00b4d8;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 22px;
+
+}
+
+.btnEqual:hover {
+
+  background-color: #90e0ef;
+  color: #0077b6;
+
+}
+
+.btnOper {
+
+  width: 22%;
+  height: 55px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0077b6;
+  font-size: 22px;
+
+}
+
+.btnOper:hover {
+
+  background-color: #343a40;
+
 }
