@@ -8,13 +8,13 @@ function App() {
   const [acumulador,setAcumulador]=useState(0)
   const [operacao,setOperacao]=useState(false)
 
-  // COMPONEMTES
+  // COMPONENTES
 
   const tela = (valor,res) => {
 
     return(
 
-      <div className=''>
+      <div className='screen'>
 
         <span>{valor}</span>
         <span>{res}</span>
@@ -29,7 +29,7 @@ function App() {
 
     return(
 
-      <button className='' onClick={onClick}>
+      <button className='btn' onClick={onClick}>
 
         {label}
 
@@ -106,8 +106,37 @@ function App() {
 
   return (
 
-    
-    <div></div>
+    <div className='container'>
+
+      <h3>Calculadora Matemática</h3>
+
+      {tela(valorTela,resultado)}
+
+      <div>
+
+        {btn('AC',limparMemoria)}
+        {btn('(',()=>addCalc('('))}
+        {btn(')',()=>addCalc(')'))}
+        {btn('/',()=>addCalc('/'))}
+        {btn('7',()=>addCalc('7'))}
+        {btn('8',()=>addCalc('8'))}
+        {btn('9',()=>addCalc('9'))}
+        {btn('*',()=>addCalc('*'))}
+        {btn('4',()=>addCalc('4'))}
+        {btn('5',()=>addCalc('5'))}
+        {btn('6',()=>addCalc('6'))}
+        {btn('-',()=>addCalc('-'))}
+        {btn('1',()=>addCalc('1'))}
+        {btn('2',()=>addCalc('2'))}
+        {btn('3',()=>addCalc('3'))}
+        {btn('0',()=>addCalc('0'))}
+        {btn('.',()=>addCalc('.'))}
+        {btn('<-',()=>operacoes('bs'))}
+        {btn('=',()=>operacoes('='))}
+
+      </div>
+
+    </div>
 
   );
 }
