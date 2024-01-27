@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import Github from "./images/github-mark/github-mark-white.svg";
+import Linkedin from "./images/linkedin-mark/icon1-linkedin.svg"
 import './App.css';
 
 function App() {
@@ -9,6 +11,23 @@ function App() {
   const [operacao,setOperacao]=useState(false)
 
   // COMPONENTES
+
+  const Linha = ({img, user}) => {
+
+    const [currentUser, setUser] = useState(user);
+
+    return (
+
+      <li>
+
+        <img src={img}/>
+        <h3>{currentUser}</h3>
+
+      </li>
+
+    )
+
+  }
 
   const tela = (valor,res) => {
 
@@ -120,10 +139,24 @@ function App() {
 
     try {
 
-      const r = eval(valorTela) // VARIÁVEL DE CÁLCULO
-      setAcumulador(r)
-      setResultado(r)
-      setOperacao(true)
+      const r = eval(valorTela); // VARIÁVEL DE CÁLCULO
+
+      let adjustedResult; // VARIÁVEL PARA AJUSTAR O RESULTADO
+    
+      if (Math.abs(r) >= 1e15) {
+
+        adjustedResult = r.toExponential(2); // toExponential serve para trazer esse resultado em notação ciêntifica
+      }
+      
+      else {
+
+        adjustedResult = String(r); //
+
+      }
+    
+      setAcumulador(adjustedResult);
+      setResultado(adjustedResult);
+      setOperacao(true);
 
     }
 
@@ -139,8 +172,6 @@ function App() {
   return (
 
     <div className='container'>
-
-      <h3>Calculadora Matemática</h3>
 
       <div className='calculadora'>
 
@@ -172,6 +203,20 @@ function App() {
         </div>
 
       </div>
+
+
+      <div className='devInfo'> 
+
+      <ul>
+
+        <a href='https://github.com/RodrigoNasc13' target='_blank'><Linha img={Github} user="RodrigoNasc13" /></a>
+        <a href='https://linkedin.com/in/rodrigonasct' target='_blank'><Linha img={Linkedin} user="rodrigonasct"/></a>
+
+      </ul>
+
+
+      </div>
+
 
 
     </div>
